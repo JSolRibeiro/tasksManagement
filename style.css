@@ -30,7 +30,6 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked + label {
   display: flex;
   border-radius: 2rem;
-  background-color: #28a745; /* Verde */
 }
 
 input[type="checkbox"]:checked + label::before {
