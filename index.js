@@ -273,6 +273,7 @@ createTasks = (event) => {
     const NewTaskData = getNewTaskData(event);
     const checkbox = getCheckBoxAndTask(NewTaskData);
     const inputTask = document.getElementById('description');
+    const inputTaskDescription = document.getElementById('DetailedDescription');
     if (!event.target.description.value) {
         inputTask.classList.add('empty');
     } else {
@@ -286,6 +287,7 @@ createTasks = (event) => {
         countTasks(updatedTasks);
     }
     inputTask.value = '';
+    inputTaskDescription.value = '';
 }
 
 window.onload = () => {
