@@ -30,6 +30,7 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked + label {
   display: flex;
   border-radius: 2rem;
+  background-color: #28a745; /* Verde */
 }
 
 input[type="checkbox"]:checked + label::before {
@@ -260,7 +261,7 @@ input[type="checkbox"]:checked + label::before {
   width: 100%;
   min-height: 1rem;
   display: flex;
-  align-items: center;
+  align-items:baseline;
   padding: 1rem;
   margin: 0;
 }
@@ -436,7 +437,7 @@ i:hover {
   font-weight: 400;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 450px) {
 
   .toDoMain{
     width: 80%;
@@ -454,6 +455,32 @@ i:hover {
   .sendTask {
     font-size: 2rem;
   }
+
+  input[type="checkbox"]:checked + label + label{
+    display: flex;
+    border-radius: 2rem;
+    background-color: #28a745; /* Verde */
+  }
+  input[type="checkbox"]:checked + label {
+    display: flex;
+    border-radius: 2rem;
+    background:none /* Verde */
+  }
+
+  input[type="checkbox"]:checked + label::before {
+    content:none;
+    height: 2rem;
+    border-radius: 2rem;
+    color: white;
+  }
+
+  input[type="checkbox"]:checked + label + label::before {
+    content: url(imgs/check_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg);
+    height: 2rem;
+    border-radius: 2rem;
+    color: white;
+  }
+
 }
 
 
