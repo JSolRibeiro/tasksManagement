@@ -119,13 +119,8 @@ const createTaskItem = (task, checkbox) => {
     delButton.appendChild(delIcon);
     delButton.onclick = () => deleteTask(task.id);
 
-    if (!task.description.length) {
-        input.classList.add('empty');
-
-    } if(window.innerWidth <= 450) {
+    if (window.innerWidth <= 450) {
         const buttons = document.createElement('span');
-        input.classList.remove('empty')
-
         buttons.appendChild(delButton);
         buttons.appendChild(editButton);
         itemList.appendChild(buttons);
@@ -133,7 +128,7 @@ const createTaskItem = (task, checkbox) => {
         itemList.appendChild(checkbox);
         itemList.id = task.id;
         taskList.appendChild(itemList)
-    }else{
+    } else {
 
         input.classList.remove('empty')
         itemList.appendChild(delButton);
@@ -245,16 +240,16 @@ const getCheckBoxAndTask = ({ id, description, detailedDescription, checked }) =
     checkbox.checked = checked;
     checkbox.onclick = onCheckboxClick;
 
-    if(window.innerWidth <= 450){
+    if (window.innerWidth <= 450) {
         wrapper.appendChild(checkbox);
         label.appendChild(title);
         wrapper.appendChild(label);
         label.appendChild(detail);
         wrapper.appendChild(labelCheck)
-    }else{
+    } else {
 
         label.appendChild(title);
-    
+
         wrapper.appendChild(label);
         label.appendChild(detail);
         wrapper.appendChild(checkbox);
@@ -277,19 +272,21 @@ createTasks = (event) => {
     event.preventDefault();
     const NewTaskData = getNewTaskData(event);
     const checkbox = getCheckBoxAndTask(NewTaskData);
-    event.target.elements.description.value = '';
-    event.target.elements.detailedDescription.value = '';
+    const inputTask = document.getElementById('description');
+    if (!event.target.description.value) {
+        inputTask.classList.add('empty');
+    } else {
+        inputTask.classList.remove('empty');
+        createTaskItem(NewTaskData, checkbox)
 
-    createTaskItem(NewTaskData, checkbox)
-
-    const tasks = getTasksFromLocalStorage();
-    const updatedTasks = [...tasks, NewTaskData];
-    setTasksInLocalStorage(updatedTasks);
-    showEmptyMessage();
-    countTasks(updatedTasks);
+        const tasks = getTasksFromLocalStorage();
+        const updatedTasks = [...tasks, NewTaskData];
+        setTasksInLocalStorage(updatedTasks);
+        showEmptyMessage();
+        countTasks(updatedTasks);
+    }
+    inputTask.value = '';
 }
-
-
 
 window.onload = () => {
     const form = document.getElementById('formTask');
