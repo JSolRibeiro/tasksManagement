@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/3e19f90669.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Teste toDoList</title>
+  </head>
+  <body>
+    <main class="toDoMain">
+      <h1>Cadastrar Nova Tarefa</h1>
+      <section>
+        <form action="" id="formTask">
+          <span class="inputs">
+            <input
+              type="text"
+              name="description"
+              id="description"
+              class="taskInput"
+              autocomplete="off"
+              aria-label="Qual tarefa deseja cadastrar?"
+              placeholder="Qual tarefa deseja cadastrar?"
+            />
+            <textarea
+              name="detailedDescription"
+              id="DetailedDescription"
+              name="detailedDescription"
+              class="DetailedDescription"
+              aria-label="Informe os detalhes da tarefa"
+              placeholder="Detalhes sobre a sua tarefa"
+            ></textarea>
+          </span>
+          <button class="sendTask" aria-label="Cadastrar tarefa">Cadastrar tarefa</button>
+        </form>
+      </section>
+      <h2>Lista de Tarefas</h2>
+      <ul id="toDoList"></ul>
+      <footer id="footer">
+        <button class="removeCompletedTasks" onclick="removeCompletedTasks()">
+          Limpar tarefas concluídas
+        </button>
+      </footer>
+    </main>
+  </body>
+</html>
