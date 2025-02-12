@@ -451,6 +451,10 @@ i:hover {
   #toDoList > li > span{
     width: 14%;
   }
+
+  .sendTask {
+    font-size: 2rem;
+  }
 }
 
 
