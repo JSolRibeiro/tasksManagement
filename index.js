@@ -66,8 +66,7 @@ const editTask = (id) => {
     textAreaDesciption.value = taskToEdit.detailedDescription;
 
     const saveButton = document.createElement('button');
-    saveButton.className = 'save-btn';
-    saveButton.classList.add('fas', 'fa-floppy-disk')
+    saveButton.classList.add('save-btn', 'fas', 'fa-floppy-disk')
     saveButton.onclick = () => {
         taskToEdit.description = inputDescription.value;
         taskToEdit.detailedDescription = textAreaDesciption.value;
@@ -296,7 +295,7 @@ window.onload = () => {
     const detailedDescription = document.getElementById('DetailedDescription');
 
     detailedDescription.addEventListener('focus', (event) => {
-        detailedDescription.style.height = "20rem";
+        detailedDescription.style.height = "15rem";
         event.target.placeholder = "";
 
     })
